@@ -10,9 +10,10 @@
 
   <div class="mdp_oublie">
     <p>
-      Si vous avez oublié votre mot de passe, le seul moyen que vous avez pour acceder au contenue du site est de vous créer un nouveau compte.
-      <div>
-      Merci de votre compréhension.
+      Si vous avez oublié votre mot de passe, le seul moyen que vous ayez pour acceder au contenu du site est de vous créer un nouveau compte.
+    </p>
+    <p>
+      Merci de votre compréhension
     </p>
   </div>
 
