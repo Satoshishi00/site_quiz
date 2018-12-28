@@ -2,7 +2,12 @@
   include 'header_connexion.php';
 ?>
 
+<header>
+  <h1>Inscription</h1>
+</header>
+
 <section>
+
   <form class="form-inscription">
 
     <div class="form-group">

@@ -1,3 +1,13 @@
+
+
+h1 {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 3.5em;
+  font-family: 'Arial Black', Gadget, sans-serif;
+
+}
+
 .form-inscription {
   position: absolute;
   top: 50%;
@@ -7,5 +17,25 @@
 }
 
 .btn {
+  margin-top: 20px;
+}
+
+section form a {
+  position: absolute;
+  right: 0;
+}
+
+section form .inscription {
+  height: 60px;
+  position: relative;
+  margin-top: 20px;
+}
+section form p {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+}
+
+section form .mdp_oublie {
   margin-top: 20px;
 }

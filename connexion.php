@@ -2,8 +2,14 @@
   include 'header_connexion.php';
 ?>
 
+<header>
+  <h1>Connexion</h1>
+</header>
+
 <section>
+
   <form class="form-inscription">
+
     <div class="form-group">
       <label for="exampleInputEmail1">Email</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre email">
@@ -17,8 +23,19 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
     </div>
+
     <button type="submit" class="btn btn-primary">Se connecter</button>
+
+    <div class="inscription">
+      <p>Vous n'avez pas encore de compte ? :o</p>
+      <a href="inscription.php" class="btn btn-primary">S'inscrire</a>
+    </div>
+
+    <a class="mdp_oublie" href="mdp_oublie.php">Mot de passe oublié ?</a>
   </form>
+
+
+
 </section>
 
 <?php
