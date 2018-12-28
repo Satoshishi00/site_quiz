@@ -1,0 +1,12 @@
+.espace_cartes{
+  margin-top: 80px;
+}
+
+.carte_quiz {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0.5px 0.5px 1px black;
+}
