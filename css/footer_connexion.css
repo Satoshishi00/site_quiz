@@ -1,0 +1,10 @@
+.footer-connexion {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-connexion p {
+  text-align: center;
+}

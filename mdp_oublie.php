@@ -2,7 +2,7 @@
   include 'header_connexion.php';
 ?>
 
-<header>
+<header class="header-mdp-oublie">
   <h1>Le site est en construction</h1>
 </header>
 

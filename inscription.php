@@ -2,7 +2,7 @@
   include 'header_connexion.php';
 ?>
 
-<header>
+<header class="header-inscription">
   <h1>Inscription</h1>
 </header>
 
@@ -34,10 +34,15 @@
 
     <button type="submit" class="btn btn-primary">S'inscrire</button>
 
+    <div class="inscription">
+      <p>Vous avez déjà un compte ? :)</p>
+      <a href="connexion.php" class="btn btn-primary">Se connecter</a>
+    </div>
+
   </form>
 
 </section>
 
 <?php
-  include 'footer.php';
+  include 'footer_connexion.php';
 ?>

@@ -2,7 +2,7 @@
   include 'header_connexion.php';
 ?>
 
-<header>
+<header class="header-connexion">
   <h1>Connexion</h1>
 </header>
 
@@ -39,5 +39,5 @@
 </section>
 
 <?php
-  include 'footer.php';
+  include 'footer_connexion.php';
 ?>

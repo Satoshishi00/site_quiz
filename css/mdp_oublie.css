@@ -1,5 +1,12 @@
+.header-mdp-oublie h1 {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 3.5em;
+  font-family: 'Arial Black', Gadget, sans-serif;
+}
+
 .mdp_oublie p {
-  margin-top: 100px;
+  margin-top: 80px;
   font-size: 1.8em;
   text-align: center;
 }
