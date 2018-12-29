@@ -1,13 +1,44 @@
-.question {
-  margin-top: 80px;
+.header-creation-quiz {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.header-creation-quiz h1 {
+  font-size: 3.5em;
+}
+
+.form-creation-quiz {
   width: 600px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-size: 0.5em;
-  background-color: green;
+}
+
+.question {
+  margin-top: 60px;
 }
 
 .question h2 {
   margin-bottom: 40px;
+}
+
+.question label {
+  font-size: 0.9em;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.question .label-question {
+  margin-right: 31px;
+  font-size: 1em;
+}
+
+.question .input-group {
+  margin-bottom: 5px;
+}
+
+.question .input-question {
+  margin-bottom: 20px;
 }
