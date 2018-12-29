@@ -68,9 +68,10 @@
 
     </div>
 
-    
+    <div class="button-creer">
+      <button type="submit" class="btn btn-primary">Créer</button>
+    </div>
 
-    <button type="submit" class="btn btn-primary">Créer</button>
   </form>
 
 </section>

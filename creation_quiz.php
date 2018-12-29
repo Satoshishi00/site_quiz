@@ -8,116 +8,37 @@
 
 <section>
 
-  <form class="" action="index.html" method="post">
+  <form class="form-creation-quiz" action="index.html" method="post">
 
-    <div class="question">
-      <h2>Question n°i</h2>
-
-
-      <div class="input-question">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <label class="label-question" for="exampleFormControlInput1">Question</label>
-            </div>
-          </div>
-          <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez votre question">
-        </div>
-      </div>
-
-
-      <div class="input-group">
-
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <label for="exampleFormControlInput1">Réponse 1</label>
-            <input type="radio" aria-label="Radio button for following text input" name="question1" >
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez la réponse n°1">
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <label for="exampleFormControlInput1">Réponse 2</label>
-            <input type="radio" aria-label="Radio button for following text input" name="question1">
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez la réponse n°2">
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <label for="exampleFormControlInput1">Réponse 3</label>
-            <input type="radio" aria-label="Radio button for following text input" name="question1">
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez la réponse n°3">
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <label for="exampleFormControlInput1">Réponse 4</label>
-            <input type="radio" aria-label="Radio button for following text input" name="question1">
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez la réponse n°4">
-      </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Catégorie</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>Cat1</option>
+        <option>Cat2</option>
+        <option>Cat3</option>
+        <option>Cat4</option>
+        <option>Cat5</option>
+      </select>
     </div>
 
-    <div class="question">
-      <h2>Question n°i</h2>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nom du quiz</label>
+      <input type="text" class="form-control" placeholder="Entrez le nom du quiz">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nombre de questions</label>
+      <input type="number" class="form-control" placeholder="Entrez le nombre de question du quiz">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description sommaire du quiz</label>
+      <textarea class="form-control" rows="3"></textarea>
+    </div>
 
 
-      <div class="input-question">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-              <label class="label-question" for="exampleFormControlInput1">Question</label>
-            </div>
-          </div>
-          <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez votre question">
-        </div>
-      </div>
-
-
-      <div class="input-group">
-
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <label for="exampleFormControlInput1">Réponse 1</label>
-            <input type="radio" aria-label="Radio button for following text input" name="question1" >
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez la réponse n°1">
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <label for="exampleFormControlInput1">Réponse 2</label>
-            <input type="radio" aria-label="Radio button for following text input" name="question1">
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez la réponse n°2">
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <label for="exampleFormControlInput1">Réponse 3</label>
-            <input type="radio" aria-label="Radio button for following text input" name="question1">
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez la réponse n°3">
-      </div>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <label for="exampleFormControlInput1">Réponse 4</label>
-            <input type="radio" aria-label="Radio button for following text input" name="question1">
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button" placeholder="Rentrez la réponse n°4">
-      </div>
+    <div class="button-creer">
+      <button type="submit" class="btn btn-primary">Suivant</button>
     </div>
 
   </form>
