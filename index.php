@@ -1,5 +1,5 @@
 <?php
-  include 'header.php';
+  include 'html/header.html';
 ?>
 
 <header class="header-accueil">
@@ -77,5 +77,5 @@
 
 
 <?php
-  include 'footer.php';
+  include 'html/footer.html';
 ?>

@@ -1,5 +1,5 @@
 <?php
-  include 'header_connexion.php';
+  include 'html/header_connexion.html';
 ?>
 
 <header class="header-inscription">
@@ -44,5 +44,5 @@
 </section>
 
 <?php
-  include 'footer_connexion.php';
+  include 'html/footer_connexion.html';
 ?>

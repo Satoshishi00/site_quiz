@@ -1,5 +1,5 @@
 <?php
-  include 'header.php';
+  include 'html/header.html';
 ?>
 
 <header class="header-creation-quiz">
@@ -32,5 +32,5 @@
 
 
 <?php
-  include 'footer_connexion.php';
+  include 'html/footer_connexion.html';
 ?>
