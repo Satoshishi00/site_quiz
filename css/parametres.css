@@ -1,0 +1,16 @@
+.section-parametres {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  text-align: center;
+}
+
+.section-parametres h2 {
+  margin-bottom: 40px;
+  font-size: 2.4em;
+}
+
+.section-parametres .bloc {
+  margin-bottom: 30px;
+  font-size: 1.4em;
+}
