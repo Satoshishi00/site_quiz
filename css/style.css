@@ -4,3 +4,11 @@
 @import "inscription.css";
 @import "mdp_oublie.css";
 @import "footer_connexion.css";
+@import "creation_quiz.css";
+@import url(barre_nav.css);
+@import url(cards.css);
+@import url(creation_quiz.css);
+@import url(footer_connexion.css);
+@import url(footer.css);
+@import url(inscription.css);
+@import url(mdp_oublie.css);

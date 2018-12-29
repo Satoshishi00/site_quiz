@@ -1,0 +1,13 @@
+.question {
+  margin-top: 80px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 0.5em;
+  background-color: green;
+}
+
+.question h2 {
+  margin-bottom: 40px;
+}

@@ -10,3 +10,12 @@
   margin-bottom: 30px;
   box-shadow: 0.5px 0.5px 1px black;
 }
+
+.header-accueil {
+  color: blue;
+}
+
+.header-accueil h1 {
+  text-align: center;
+  color: blue;
+}

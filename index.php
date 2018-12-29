@@ -2,6 +2,10 @@
   include 'header.php';
 ?>
 
+<header class="header-accueil">
+  <h1>Accueil</h1>
+</header>
+
 <section class="espace_cartes">
 
   <div class="carte_quiz">

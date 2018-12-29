@@ -14,10 +14,10 @@
     <header>
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Accueil</a>
+          <a class="nav-link active" href="index.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Créer un quiz</a>
+          <a class="nav-link" href="creation_quiz.php">Créer un quiz</a>
         </li>
         <div class="barre_utilisateur">
           <li class="nav-item dropdown">
