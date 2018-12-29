@@ -23,8 +23,8 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pseudo</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Mon profil</a>
-              <a class="dropdown-item" href="#">Sécurité</a>
+              <a class="dropdown-item" href="profil.php">Mon profil</a>
+              <a class="dropdown-item" href="parametres.php">Paramètres</a>
               <!-- <a class="dropdown-item" href="#">Something else here</a> -->
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Se déconnecter</a>
