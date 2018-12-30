@@ -36,18 +36,23 @@ if(!empty($_POST)){
       session_start();
 
       //récupération du nb de pts et de questions dans la bdd
-      $req = $bdd->prepare("SELECT points,nb_questions FROM utilisateurs WHERE mail = :mail");
-      $req->execute(array('mail' => $mail1));
+      $req = $bdd->prepare("SELECT points,nb_questions,pseudo FROM utilisateurs WHERE mail = :mail");
+      $req->execute(array('mail' => $mail));
       $data = $req->fetch();
 
       $_SESSION['points']       = $data[0];
       $_SESSION['nb_question']  = $data[1];
-      $_SESSION['pseudo']       = $_POST["pseudo"];
+      $_SESSION['pseudo']       = $data[2];
       $_SESSION['last_co']      = time();
       $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
 
-      header('Location: ../index.php');
-      exit();
+      echo "$_SESSION[points]";
+      echo "$_SESSION[nb_question]";
+      echo "$_SESSION[pseudo] ";
+      echo "$_SESSION[last_co]";
+      echo "$_SESSION[user_ip]";
+      // header('Location: ../index.php');
+      // exit();
 
     }
     else{
