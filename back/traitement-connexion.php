@@ -50,6 +50,7 @@ if(!empty($_POST)){
       $req = $bdd->prepare('UPDATE utilisateurs SET date_derniere_connexion=NOW() WHERE mail= :mail');
       $req->execute(array('mail' => $mail));
 
+
       header('Location: ../index.php');
       exit();
 
