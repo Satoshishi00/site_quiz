@@ -5,49 +5,9 @@
 
 <?php
 
-//connexion à la bdd
-try
-{
-  $bdd = new PDO('mysql:host=localhost;dbname=site_quiz;charset=utf8', 'root', '');
-}
-catch (Exception $e)
-{
-        die('Erreur : ' . $e->getMessage());
-}
-
 //initialisation des erreurs
 $error_mail='';
 $error_mdp='';
-
-//initialisation des variables
-$mail = '';
-$mdp = '';
-
-if(!empty($_POST)){
-  $mail = $_POST['email'];
-  $mdp = $_POST['mdp'];
-  $req = $bdd->prepare("SELECT mail FROM utilisateurs WHERE mail = :mail");
-  $req->execute(array('mail' => $mail));
-  $donnees = $req->fetch();
-  echo "ok $mail $mdp";
-  if($donnees){ //si le nb de fois qu'apparait $mail1 dans la table est différent de 0
-    $req = $bdd->prepare("SELECT mdp FROM utilisateurs WHERE mail = :mail");
-    $req->execute(array('mail' => $mail));
-    $data = $req->fetch(0);
-    print_r($data['mdp']);
-    if (password_verify($mdp,$data['mdp'])){
-      echo "ok";
-      
-    }
-    else{
-      $error_mdp = "Mauvais mot de passe";
-    }
-  }
-  else{
-    $error_mail = "L'adresse email que vous avez saisi n'existe pas";
-  }
-}
-
 
 ?>
 
@@ -58,7 +18,7 @@ if(!empty($_POST)){
 
 <section>
 
-  <form class="form-inscription" method="post" action="">
+  <form class="form-inscription" method="post" action="back/traitement-connexion.php">
 
     <div class="form-group">
       <label for="exampleInputEmail1">Email</label>

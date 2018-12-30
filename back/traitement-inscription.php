@@ -66,8 +66,8 @@ if(!empty($_POST)){
               //récupération de ip de l'utilisateur en session
               $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
 
-              // header('Location: ../index.php');
-              // exit();
+              header('Location: ../index.php');
+              exit();
 
             }
             else{
