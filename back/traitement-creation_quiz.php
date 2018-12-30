@@ -2,9 +2,6 @@
 
 session_start();
 
-//initialisation des erreurs
-$error_categorie = '';
-$error_nom = '';
 
 //initialisation des variables
 $categorie = '';
@@ -22,6 +19,7 @@ if(!empty($_POST)){
     echo "bip";
     if(strlen($nom) >= 4 AND strlen($nom) <=23){
       echo "bip";
+      $bdd = new PDO('mysql:host=localhost;dbname=site_quiz;charset=utf8', 'root', '');
       $req = $bdd->prepare("SELECT nom FROM quiz WHERE nom = :nom");
       $req->execute(array('nom' => $nom));
       $donnees = $req->fetch();

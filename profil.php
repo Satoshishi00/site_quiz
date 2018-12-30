@@ -4,7 +4,7 @@
 ?>
 
 <header class="header-creation-quiz">
-  <h1>Pseudo</h1>
+  <h1><?= $_SESSION['pseudo'] ?></h1>
 </header>
 
 <section class="section-profil">

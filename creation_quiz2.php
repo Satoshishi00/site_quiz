@@ -8,7 +8,7 @@
 
 <section>
 
-  <form class="form-creation-quiz" action="index.html" method="post">
+  <form class="form-creation-quiz" action="" method="post">
 
   <?php
 
@@ -76,7 +76,7 @@
 
       if(!empty($_POST)){
 
-
+        $bdd = new PDO('mysql:host=localhost;dbname=site_quiz;charset=utf8', 'root', '');
         $req = $bdd->prepare('INSERT INTO quiz(categorie, nom, nb_questions, description, auteur, date_creation)
                               VALUES(:categorie, :nom, :nb_questions, :description, :auteur, NOW())');
         $req->execute(array(
@@ -91,6 +91,7 @@
         $req->execute(array('nom' => $_SESSION['nom_quiz']));
         $data = $req->fetch(0);
         print_r($data);
+      }
 
 
 
