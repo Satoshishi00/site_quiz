@@ -4,9 +4,14 @@
 
 <?php
 
-//initialisation des erreurs
-$error_categorie = '';
-$error_nom = '';
+session_start();
+
+if( empty($_SESSION['error_nom']) AND empty($_SESSION['error_categorie']) ) {
+  //initialisation des erreurs
+  $_SESSION['error_nom'] = '';
+  $_SESSION['error_categorie'] = '';
+  echo "bip";
+}
 
 ?>
 
@@ -28,13 +33,13 @@ $error_nom = '';
         <option>Cat4</option>
         <option>Cat5</option>
       </select>
-      <small class="small-error"><?= $error_categorie ?></small>
+      <small class="small-error"><?= $_SESSION['error_categorie'] ?></small>
     </div>
 
     <div class="form-group">
       <label for="exampleFormControlInput1">Nom du quiz</label>
       <input type="text" class="form-control" name="nom" placeholder="Entrez le nom du quiz" value="<?php if (isset($_POST['nom'])){echo $_POST['nom'];} ?>" required>
-      <small class="small-error"><?= $error_nom ?></small>
+      <small class="small-error"><?= $_SESSION['error_nom'] ?></small>
     </div>
 
     <div class="form-group">
