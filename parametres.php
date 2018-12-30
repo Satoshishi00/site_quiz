@@ -1,14 +1,8 @@
 <?php
   include 'html/header.html';
-?>
-
-<?php
-
   session_start();
-
-  echo "$_SESSION['pseudo']";
-
 ?>
+
 
 <header class="header-creation-quiz">
   <h1>Paramètres</h1>
@@ -16,7 +10,7 @@
 
 <section class="section-parametres">
 
-  <h2><?= $_SESSION['pseudo']  ?></h2>
+  <h2><?= $_SESSION['pseudo'] ?></h2>
 
   <div class="bloc">
     <a href="#">Changer adresse mail</a>

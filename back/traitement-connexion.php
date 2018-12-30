@@ -41,7 +41,7 @@ if(!empty($_POST)){
       $data = $req->fetch();
 
       $_SESSION['points']       = $data[0];
-      $_SESSION['nb_question']  = $data[1];
+      $_SESSION['nb_quiz']  = $data[1];
       $_SESSION['pseudo']       = $data[2];
       $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
       $_SESSION['last_co']      = time();

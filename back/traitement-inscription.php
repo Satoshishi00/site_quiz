@@ -60,7 +60,7 @@ if(!empty($_POST)){
               $data = $req->fetch();
 
               $_SESSION['points']       = $data[0];
-              $_SESSION['nb_question']  = $data[1];
+              $_SESSION['nb_quiz']      = $data[1];
               $_SESSION['pseudo']       = $_POST["pseudo"];
               $_SESSION['last_co']      = time();
               //récupération de ip de l'utilisateur en session

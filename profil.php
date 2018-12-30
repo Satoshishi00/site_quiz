@@ -1,5 +1,6 @@
 <?php
   include 'html/header.html';
+  session_start();
 ?>
 
 <header class="header-creation-quiz">
@@ -8,9 +9,9 @@
 
 <section class="section-profil">
 
-  <p>Nombre de points : 300</p>
+  <p>Nombre de points : <?= $_SESSION['points'] ?></p>
 
-  <p>Nombre de quiz créés : 20</p>
+  <p>Nombre de quiz créés : <?= $_SESSION['nb_quiz'] ?></p>
 
   <p>Liste des quiz créés</p>
 
