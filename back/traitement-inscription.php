@@ -55,6 +55,9 @@ if(!empty($_POST)){
               session_start();
 
               $_SESSION['pseudo']       = $_POST["pseudo"];
+              // $_SESSION['points']       =
+              // $_SESSION['nb_question']
+              // $_SESSION['']
               //récupération de ip de l'utilisateur en session
               $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
 
