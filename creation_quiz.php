@@ -10,7 +10,6 @@ if( empty($_SESSION['error_nom']) AND empty($_SESSION['error_categorie']) ) {
   //initialisation des erreurs
   $_SESSION['error_nom'] = '';
   $_SESSION['error_categorie'] = '';
-  echo "bip";
 }
 
 ?>

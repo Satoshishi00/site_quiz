@@ -45,6 +45,8 @@ if(!empty($_POST)){
       $_SESSION['pseudo']       = $data[2];
       $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
       $_SESSION['last_co']      = time();
+      $_SESSION['error_nom'] = '';
+      $_SESSION['error_categorie'] = '';
 
 
       $req = $bdd->prepare('UPDATE utilisateurs SET date_derniere_connexion=NOW() WHERE mail= :mail');

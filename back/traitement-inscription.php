@@ -65,6 +65,8 @@ if(!empty($_POST)){
               $_SESSION['last_co']      = time();
               //récupération de ip de l'utilisateur en session
               $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
+							$_SESSION['error_nom'] = '';
+						  $_SESSION['error_categorie'] = '';
 
               header('Location: ../index.php');
               exit();
