@@ -23,6 +23,11 @@
   width: 400px;
 }
 
+.small-error {
+  color: red;
+  background-color: blue;
+}
+
 .btn {
   margin-top: 20px;
 }
