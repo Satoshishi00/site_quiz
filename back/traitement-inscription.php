@@ -44,8 +44,8 @@ if(!empty($_POST)){
           if(strlen($mdp1)>=6){
             if($mdp1 === $mdp2){
               $pass_hache = password_hash($mdp1, PASSWORD_DEFAULT);
-              $req = $bdd->prepare('INSERT INTO utilisateurs(pseudo, mail, mdp, date_inscription)
-                                    VALUES(:pseudo, :mail, :mdp, NOW())');
+              $req = $bdd->prepare('INSERT INTO utilisateurs(pseudo, mail, mdp, date_inscription, date_derniere_connexion)
+                                    VALUES(:pseudo, :mail, :mdp, NOW(), NOW())');
               $req->execute(array(
                                     'pseudo' => $pseudo,
                                     'mail' => $mail1,

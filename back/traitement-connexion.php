@@ -43,16 +43,15 @@ if(!empty($_POST)){
       $_SESSION['points']       = $data[0];
       $_SESSION['nb_question']  = $data[1];
       $_SESSION['pseudo']       = $data[2];
-      $_SESSION['last_co']      = time();
       $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
+      $_SESSION['last_co']      = time();
 
-      echo "$_SESSION[points]";
-      echo "$_SESSION[nb_question]";
-      echo "$_SESSION[pseudo] ";
-      echo "$_SESSION[last_co]";
-      echo "$_SESSION[user_ip]";
-      // header('Location: ../index.php');
-      // exit();
+
+      $req = $bdd->prepare('UPDATE utilisateurs SET date_derniere_connexion=NOW() WHERE mail= :mail');
+      $req->execute(array('mail' => $mail));
+
+      header('Location: ../index.php');
+      exit();
 
     }
     else{
