@@ -1,5 +1,8 @@
 <?php
 
+//début de la session
+session_start();
+
 //connexion à la bdd
 try
 {
@@ -11,8 +14,8 @@ catch (Exception $e)
 }
 
 //initialisation des erreurs
-$error_mail='';
-$error_mdp='';
+$_SESSION['error_mail'] = '';
+$_SESSION['error_mdp'] = '';
 
 //initialisation des variables
 $mail = '';
@@ -24,16 +27,12 @@ if(!empty($_POST)){
   $req = $bdd->prepare("SELECT mail FROM utilisateurs WHERE mail = :mail");
   $req->execute(array('mail' => $mail));
   $donnees = $req->fetch();
-  echo "ok $mail $mdp";
   if($donnees){ //si le nb de fois qu'apparait $mail1 dans la table est différent de 0
+
     $req = $bdd->prepare("SELECT mdp FROM utilisateurs WHERE mail = :mail");
     $req->execute(array('mail' => $mail));
     $data = $req->fetch(0);
-    print_r($data['mdp']);
     if (password_verify($mdp,$data['mdp'])){
-
-      //début de la session
-      session_start();
 
       //récupération du nb de pts et de questions dans la bdd
       $req = $bdd->prepare("SELECT points,nb_questions,pseudo FROM utilisateurs WHERE mail = :mail");
@@ -58,11 +57,15 @@ if(!empty($_POST)){
 
     }
     else{
-      $error_mdp = "Mauvais mot de passe";
+      $_SESSION['error_mdp'] = "Mauvais mot de passe";
+      echo $_SESSION['error_mdp'];
+      header('Location: ../connexion.php');
     }
   }
   else{
-    $error_mail = "L'adresse email que vous avez saisi n'existe pas";
+    $_SESSION['error_mail'] = "L'adresse email que vous avez saisi n'existe pas";
+    echo $_SESSION['error_mail'];
+    header('Location: ../connexion.php');
   }
 }
 

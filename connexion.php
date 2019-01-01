@@ -1,13 +1,14 @@
 <?php
   include 'html/header_connexion.html';
-?>
 
+  session_start();
 
-<?php
-
-//initialisation des erreurs
-$error_mail='';
-$error_mdp='';
+  if( empty($_SESSION['error_mail']) AND empty($_SESSION['error_mdp']) ) {
+    //initialisation des erreurs
+    $_SESSION['error_mail'] = '';
+    $_SESSION['error_mdp'] = '';
+    echo"bup";
+  }
 
 ?>
 
@@ -23,12 +24,12 @@ $error_mdp='';
     <div class="form-group">
       <label for="exampleInputEmail1">Email</label>
       <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Entrez votre email" required>
-      <small class="small-error"><?=$error_mail?></small>
+      <small class="small-error"><?=$_SESSION['error_mail']?></small>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Mot de passe</label>
       <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Entrez votre mot de passe" required>
-      <small class="small-error"><?=$error_mdp?></small>
+      <small class="small-error"><?=$_SESSION['error_mdp']?></small>
     </div>
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
