@@ -4,6 +4,8 @@ session_start();
 
 if(!empty($_POST)){
 
+
+
   $bdd = new PDO('mysql:host=localhost;dbname=site_quiz;charset=utf8', 'root', '');
 
   //insertion du quiz dans la bdd
@@ -37,6 +39,20 @@ if(!empty($_POST)){
                           'id_quiz'        => $id_quiz
                           ));
   }
+
+  //nombre de points gagné en créant le quiz
+  $_SESSION['points-creation-quiz'] = 10 + $_SESSION['nb_questions']*2;
+  //insertion des points gagnés dans le compte de l'utilisateur
+  $req = $bdd->prepare('INSERT INTO utilisateurs(points)
+                        VALUES(:points)
+                        WHERE pseudo = :pseudo');
+  $req->execute(array(
+                        'points'        => $_SESSION['points-creation-quiz'],
+                        'pseudo'        => $_SESSION['pseudo'],
+                        ));
+
+  $_SESSION['new_quiz'] = '1';
+
   header('Location: ../index.php');
   exit();
 }

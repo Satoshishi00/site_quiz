@@ -1,5 +1,49 @@
 <?php
   include 'html/header.html';
+
+  session_start();
+
+  //si l'utilisateur vien de s'inscrire
+  if( !empty($_SESSION['new_inscription']) ) {
+    include "modal.php";
+    ?>
+    <!-- Affichage d'une modal  -->
+    <script>
+      $(document).ready(function(){
+        $('#id-popup-inscription').modal('show'); //affichage de la pop-up au chargement de la page
+      });
+    </script>";
+    <?php
+    $_SESSION['new_inscription'] = '';
+  }
+
+  //si l'utilisateur vient de se connecter
+  if( !empty($_SESSION['new_connexion']) ) {
+    include "modal.php";
+    ?>
+    <!-- Affichage d'une modal  -->
+    <script>
+      $(document).ready(function(){
+        $('#id-popup-connexion').modal('show'); //affichage de la pop-up au chargement de la page
+      });
+    </script>";
+    <?php $_SESSION['new_connexion'] = '';
+  }
+
+  //si l'utilisateur vient de créer un quiz
+  if( !empty($_SESSION['new_quiz']) ) {
+    include "modal.php";
+    ?>
+    <!-- Affichage d'une modal  -->
+    <script>
+      $(document).ready(function(){
+        $('#id-popup-creation-quiz').modal('show'); //affichage de la pop-up au chargement de la page
+      });
+    </script>";
+    <?php $_SESSION['new_quiz'] = '';
+  }
+
+
 ?>
 
 <header class="header-accueil">
