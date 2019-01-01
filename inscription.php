@@ -1,16 +1,17 @@
 <?php
   include 'html/header_connexion.html';
+
+  session_start();
+
+
+  if( empty($_SESSION['error_pseudo']) AND empty($_SESSION['error_mail']) AND empty($_SESSION['error_mdp'])) {
+    //initialisation des erreurs
+    $_SESSION['error_pseudo'] = '';
+    $_SESSION['error_mail'] = '';
+    $_SESSION['error_mdp'] = '';
+  }
 ?>
 
-
-<?php
-
-//initialisation des erreurs
-$error_pseudo='';
-$error_mail='';
-$error_mdp='';
-
-?>
 
 <header class="header-inscription">
   <h1>Inscription</h1>
@@ -23,22 +24,22 @@ $error_mdp='';
     <div class="form-group">
       <label for="exampleInputEmail1">Pseudo</label>
       <input type="text" class="form-control" name="pseudo" placeholder="Entrez un pseudo" min="3" maxlength="20" required>
-      <small class="small-error"><?= $error_pseudo ?></small>
+      <small class="small-error"><?= $_SESSION['error_pseudo'] ?></small>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Email</label>
       <input type="email" class="form-control" name="email1" aria-describedby="emailHelp" placeholder="Entrez votre email" required>
-      <small class="small-error"><?= $error_mail ?></small>
+      <small class="small-error"><?= $_SESSION['error_mail'] ?></small>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Corfirmation Email</label>
       <input type="email" class="form-control" name="email2" aria-describedby="emailHelp" placeholder="Confirmez votre email" required>
-      <small class="small-error"><?= $error_mail ?></small>
+      <small class="small-error"><?= $_SESSION['error_mail'] ?></small>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Mot de passe</label>
       <input type="password" class="form-control" name="mdp1" placeholder="Entrez votre mot de passe" maxlength="23" required>
-      <small class="small-error"><?= $error_mdp ?></small>
+      <small class="small-error"><?= $_SESSION['error_mdp'] ?></small>
       </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Confirmation mot de passe</label>
@@ -61,4 +62,9 @@ $error_mdp='';
 
 <?php
   include 'html/footer_connexion.html';
+
+  //reinitialisation des variables erreur
+  $_SESSION['error_pseudo'] = '';
+  $_SESSION['error_mail'] = '';
+  $_SESSION['error_mdp'] = '';
 ?>

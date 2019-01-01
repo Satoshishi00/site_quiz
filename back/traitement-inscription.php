@@ -1,5 +1,8 @@
 <?php
 
+//début de la session
+session_start();
+
 //connexion à la bdd
 try
 {
@@ -11,9 +14,9 @@ catch (Exception $e)
 }
 
 //initialisation des erreurs
-$error_pseudo='';
-$error_mail='';
-$error_mdp='';
+$_SESSION['error_pseudo'] = '';
+$_SESSION['error_mail'] = '';
+$_SESSION['error_mdp'] = '';
 
 //initialisation des variables
 $pseudo = '';
@@ -51,8 +54,6 @@ if(!empty($_POST)){
                                     'mail' => $mail1,
                                     'mdp' => $pass_hache
                                     ));
-              //début de la session
-              session_start();
 
               //récupération du nb de pts et de questions dans la bdd
               $req = $bdd->prepare("SELECT points,nb_questions FROM utilisateurs WHERE mail = :mail");
@@ -74,30 +75,46 @@ if(!empty($_POST)){
             }
             else{
               $error_mdp = "Les mots de passes saisis sont différents";
+							$_SESSION['error_mdp'] = "Les mots de passes saisis sont différents";
+				      echo $_SESSION['error_mdp'];
+				      header('Location: ../inscription.php');
             }
           }
           else{
             $error_mdp = "Votre mot de passe doit faire au moins 6 caractères";
+						$_SESSION['error_mdp'] = "Votre mot de passe doit faire au moins 6 caractères";
+						echo $_SESSION['error_mdp'];
+						header('Location: ../inscription.php');
           }
         }
         else{
-          $error_mail = "Les emails de passes sont différentes";
+          $error_mail = "Les adresses mail sont différentes";
+					$_SESSION['error_mail'] = "Les adresses mail sont différentes";
+					echo $_SESSION['error_mail'];
+					header('Location: ../inscription.php');
         }
       }
       else{
         $error_mail = "Cet email existe déjà";
+				$_SESSION['error_mail'] = "Cet email existe déjà";
+				echo $_SESSION['error_mail'];
+				header('Location: ../inscription.php');
       }
     }
     else{
       $error_pseudo = "Votre pseudo doit être compris entre 3 et 20 caractères";
-    }
+			$_SESSION['error_pseudo'] = "Votre pseudo doit être compris entre 3 et 20 caractères";
+			echo $_SESSION['error_pseudo'];
+			header('Location: ../inscription.php');
+		}
   }
   else{
     $error_pseudo = "Votre pseudo existe déjà";
+		$_SESSION['error_pseudo'] = "Votre pseudo existe déjà";
+		echo $_SESSION['error_pseudo'];
+		header('Location: ../inscription.php');
   }
 }
-else{
-  $error = "Veuillez remplir tous les champs";
-}
+
 
 ?>

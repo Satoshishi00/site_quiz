@@ -7,7 +7,6 @@
     //initialisation des erreurs
     $_SESSION['error_mail'] = '';
     $_SESSION['error_mdp'] = '';
-    echo"bup";
   }
 
 ?>
@@ -52,4 +51,8 @@
 
 <?php
   include 'html/footer_connexion.html';
+
+  //reinitialisation des variables erreur
+  $_SESSION['error_mail'] = '';
+  $_SESSION['error_mdp'] = '';
 ?>
