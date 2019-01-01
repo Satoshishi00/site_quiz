@@ -43,13 +43,14 @@ if(!empty($_POST)){
   //nombre de points gagné en créant le quiz
   $_SESSION['points-creation-quiz'] = 10 + $_SESSION['nb_questions']*2;
   //insertion des points gagnés dans le compte de l'utilisateur
-  $req = $bdd->prepare('INSERT INTO utilisateurs(points)
-                        VALUES(:points)
-                        WHERE pseudo = :pseudo');
+  $req = $bdd->prepare("UPDATE utilisateurs
+                        SET (points = :points)
+                        WHERE pseudo = :pseudo");
+
   $req->execute(array(
-                        'points'        => $_SESSION['points-creation-quiz'],
-                        'pseudo'        => $_SESSION['pseudo'],
-                        ));
+                      ':pseudo' => $_SESSION['pseudo'],
+                      ':points' => $_SESSION['points-creation-quiz'],
+                      ));
 
   $_SESSION['new_quiz'] = '1';
 

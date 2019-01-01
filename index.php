@@ -75,7 +75,8 @@
             <h5 class=card-title>$data[nom]</h5>
             <p class=card-text>$data[description]</p>
             <p class=card-text>$data[nb_questions] questions</p>
-            <a href='repondre_quiz.php' class='btn btn-primary'>Lancer le quiz</a>
+
+            <a href='repondre_quiz.php/?nom_quiz=$data[nom]' class='btn btn-primary'>Lancer le quiz</a>
           </div>
           <div class='card-footer text-muted'>
             $data[date_creation]
