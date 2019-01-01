@@ -62,5 +62,10 @@ if( empty($_SESSION['error_nom']) AND empty($_SESSION['error_categorie']) ) {
 
 
 <?php
+
+  //initialisation des erreurs
+  $_SESSION['error_nom'] = '';
+  $_SESSION['error_categorie'] = '';
+
   include 'html/footer.html';
 ?>
