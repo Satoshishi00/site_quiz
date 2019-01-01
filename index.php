@@ -21,7 +21,6 @@
     $req = $bdd->prepare("SELECT * FROM quiz WHERE id = :id");
     $req->execute(array('id' => $i));
     $data = $req->fetch(0);
-    print_r($data);
     echo
       "<div class=carte_quiz>
         <div class='card text-center'>
@@ -32,29 +31,12 @@
             <h5 class=card-title>$data[nom]</h5>
             <p class=card-text>$data[description]</p>
             <p class=card-text>$data[nb_questions] questions</p>
-            <a href=# class='btn btn-primary'>Lancer le quiz</a>
+            <a href='repondre_quiz.php' class='btn btn-primary'>Lancer le quiz</a>
           </div>
           <div class='card-footer text-muted'>
-            2 days ago"
-            .$d1 = new DateTime($data[date_creation]);
-            $d2 = new DateTime(time());
-            $diff = $d1->diff($d2);
+            $data[date_creation]
 
-            $nb_jours  = $intervale->d;
-
-            // $interval = date_diff($datetime2, $datetime1);
-            //
-            // $interval_annees = substr($interval->format('%Y'), 0);
-            // $interval_mois = substr($interval->format('%m'), 0);
-            // $interval_jours = substr($interval->format('%d'), 0);
-            // $interval_heures = substr($interval->format('%h'), 0);
-            // $interval_minutes = substr($interval->format('%i'), 0);
-            // $interval_secondes = substr($interval->format('%s'), 0);;
-
-
-            print_r($interval_annees);
-
-          "</div>
+          </div>
         </div>
       </div>";
   }

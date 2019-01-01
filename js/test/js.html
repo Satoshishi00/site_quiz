@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Apprendre à insérer du js</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>Apprenons à coder en JavaScript</h1>
+    <script>
+      $(document).ready(function(){
+        $('#id-popup').modal('show'); //affichage de la pop-up au chargement de la page
+      });
+    </script>
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#id-popup"> Afficher la pop up</button>
+
+
+    <div class="modal fade" id="id-popup"  data-dismiss>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Tire de la PopUp -->
+          <div class="modal-header">
+            <h4 class="modal-title" id="titrePopUp">Titre PopUp</h4>
+            <!-- Bouton de fermuture de la popup -->
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+          </div>
+
+          <div class="modal-body">
+            <p class="lead"><img src="js-logo.png" class="pull-right"/> Le pseudo le plus utilisé en France depuis 1944 est celui créé par Micheal de Lasoart un génie illustre du 17ème siècle qui créa comme Léonard de Vince un myriades d'inventions plus extraordinaire les unes que les autres</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-primary pull-left"> Continuer</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
