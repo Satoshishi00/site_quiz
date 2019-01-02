@@ -13,6 +13,21 @@
   $req->execute(array(  'id_quiz' => $id_quiz,
                         ));
   $question = $req->fetchAll();
+
+
+  //analyse des réponses
+
+  if(!empty($_POST)){
+    for($i=0;$i<$nb_questions;$i++){
+      if ($question["$i"]['bonne_rep'] == $_POST["question_$i"]){
+        echo "Vous avez juste à la question n°$i";
+      }
+      else{
+        echo "Vous avez faux à la question n°$i";
+      }
+    }
+  }
+
 ?>
 
 <header class="header-repondre-quiz">
@@ -21,7 +36,7 @@
 
 <section class="section-rep-quiz">
 
-  <form class="form-rep-quiz" action="index.html" method="post">
+  <form class="form-rep-quiz" action="" method="post">
 
     <?php
 
@@ -36,25 +51,25 @@
 
           <div class=rep>
             <label class=label-rep-num>Réponse 1</label>
-            <input type=radio  name=question_$i >
+            <input type=radio  name=question_$i value=1>
             <label class=label-rep-affichage>" . $question[$i]['rep1'] . "</label>
           </div>
 
           <div class=rep>
             <label class=label-rep-num>Réponse 2</label>
-            <input type=radio  name=question_$i >
+            <input type=radio  name=question_$i value=2>
             <label class=label-rep-affichage>" . $question[$i]['rep2'] . "</label>
           </div>
 
           <div class=rep>
             <label class=label-rep-num>Réponse 3</label>
-            <input type=radio  name=question_$i >
+            <input type=radio  name=question_$i value=3>
             <label class=label-rep-affichage>" . $question[$i]['rep3'] . "</label>
           </div>
 
           <div class=rep>
             <label class=label-rep-num>Réponse 4</label>
-            <input type=radio  name=question_$i >
+            <input type=radio  name=question_$i value=4>
             <label class=label-rep-affichage>" . $question[$i]['rep4'] . "</label>
           </div>
 
@@ -62,6 +77,10 @@
       }
 
     ?>
+
+    <button type="submit" class="btn btn-primary">Valider</button>
+
+
 
 
 

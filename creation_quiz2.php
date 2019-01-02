@@ -36,7 +36,7 @@
             <div class=input-group-prepend>
               <div class=input-group-text>
                 <label for=exampleFormControlInput1>Réponse 1</label>
-                <input type=radio name=bonne_rep_$i >
+                <input type=radio name=bonne_rep_$i value=1 >
               </div>
             </div>
             <input type=text class=form-control name=rep1_$i placeholder='Rentrez la réponse n°1' required>
@@ -46,7 +46,7 @@
             <div class=input-group-prepend>
               <div class=input-group-text>
                 <label for=exampleFormControlInput1>Réponse 2</label>
-                <input type=radio name=bonne_rep_$i>
+                <input type=radio name=bonne_rep_$i value=2 >
               </div>
             </div>
             <input type=text class=form-control name=rep2_$i placeholder='Rentrez la réponse n°2' required>
@@ -56,7 +56,7 @@
             <div class=input-group-prepend>
               <div class=input-group-text>
                 <label for=exampleFormControlInput1>Réponse 3</label>
-                <input type=radio name=bonne_rep_$i>
+                <input type=radio name=bonne_rep_$i value=r3 >
               </div>
             </div>
             <input type=text class=form-control name=rep3_$i placeholder='Rentrez la réponse n°3' required>
@@ -66,7 +66,7 @@
             <div class=input-group-prepend>
               <div class=input-group-text>
                 <label for=exampleFormControlInput1>Réponse 4</label>
-                <input type=radio name=bonne_rep_$i>
+                <input type=radio name=bonne_rep_$i value=4 >
               </div>
             </div>
             <input type=text class=form-control name=rep4_$i placeholder='Rentrez la réponse n°4' required>

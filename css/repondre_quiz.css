@@ -1,12 +1,14 @@
-.header-repondre-quiz h1 {
+.header-repondre-quiz  {
   text-align: center;
   margin-top: 60px;
+  background-color: yellow;
 }
 
 .form-rep-quiz {
   margin-left: auto;
   margin-right: auto;
   width: 600px;
+  background-color: blue;
 }
 
 .section-rep-quiz .qcm .question .label-question-num {
