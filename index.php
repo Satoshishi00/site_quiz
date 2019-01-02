@@ -1,5 +1,5 @@
 <?php
-  include 'html/header.html';
+  include 'html/header.php';
 
   session_start();
 

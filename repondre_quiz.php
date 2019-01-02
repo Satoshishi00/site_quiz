@@ -1,5 +1,5 @@
 <?php
-  include 'html/header.html';
+  include 'html/header.php';
 
   $bdd = new PDO('mysql:host=localhost;dbname=site_quiz;charset=utf8', 'root', '');
   $req = $bdd->prepare("SELECT id,nb_questions FROM quiz WHERE nom = :nom");
@@ -14,19 +14,27 @@
                         ));
   $question = $req->fetchAll();
 
+  $resultat = array();
+
+  //initialisation des résultats
+  for($i=0;$i<$nb_questions;$i++){
+    $resultat[$i] = "";
+  }
+
 
   //analyse des réponses
-
   if(!empty($_POST)){
     for($i=0;$i<$nb_questions;$i++){
       if ($question["$i"]['bonne_rep'] == $_POST["question_$i"]){
-        echo "Vous avez juste à la question n°$i";
+        $resultat[$i] = "<div id=good_rep> Vous avez juste à la question n°" . ($i+1) . "</div>";
       }
       else{
-        echo "Vous avez faux à la question n°$i";
+        $resultat[$i] = "<div id=bad_rep> Vous avez faux à la question n°" . ($i+1) . "</div>";
       }
     }
   }
+
+  print_r($resultat);
 
 ?>
 
@@ -74,6 +82,8 @@
           </div>
 
         </div>";
+
+        echo $resultat[$i];
       }
 
     ?>

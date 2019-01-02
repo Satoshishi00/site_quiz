@@ -11,6 +11,7 @@
     <title>Super Quiz</title>
   </head>
   <body>
+    <?php session_start();?>
     <header>
       <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -21,7 +22,7 @@
         </li>
         <div class="barre_utilisateur">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pseudo</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?=$_SESSION['pseudo']?></a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="/site_quiz/profil.php">Mon profil</a>
               <a class="dropdown-item" href="/site_quiz/parametres.php">Paramètres</a>

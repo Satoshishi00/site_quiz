@@ -1,5 +1,5 @@
 <?php
-  include 'html/header.html';
+  include 'html/header.php';
 ?>
 
 <header class="header-creation-quiz">
@@ -56,7 +56,7 @@
             <div class=input-group-prepend>
               <div class=input-group-text>
                 <label for=exampleFormControlInput1>Réponse 3</label>
-                <input type=radio name=bonne_rep_$i value=r3 >
+                <input type=radio name=bonne_rep_$i value=3 >
               </div>
             </div>
             <input type=text class=form-control name=rep3_$i placeholder='Rentrez la réponse n°3' required>
