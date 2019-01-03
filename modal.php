@@ -71,3 +71,51 @@
     </div>
   </div>
 </div>
+
+
+<!-- modale de réponse quiz -->
+<div class="modal fade" id="id-popup-reponse-quiz"  data-dismiss>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Tire de la PopUp -->
+      <div class="modal-header">
+        <?php
+        if($_SESSION['ration-bonne-rep'] == 1){
+          <h4 class="modal-title" id="titrePopUp">Parfait !</h4>
+        }
+        elseif($_SESSION['ration-bonne-rep'] >= 0.9){
+          <h4 class="modal-title" id="titrePopUp">Magnifique !</h4>
+        }
+        elseif($_SESSION['ration-bonne-rep'] >= 0.8){
+          <h4 class="modal-title" id="titrePopUp">Super !</h4>
+        }
+        elseif($_SESSION['ration-bonne-rep'] >= 0.6){
+          <h4 class="modal-title" id="titrePopUp">Pas mal !</h4>
+        }
+        elseif($_SESSION['ration-bonne-rep'] >= 0.45){
+          <h4 class="modal-title" id="titrePopUp">"T'es sur le bon chemin !"</h4>
+        }
+        elseif($_SESSION['ration-bonne-rep'] >= 0.2){
+          <h4 class="modal-title" id="titrePopUp">As-tu réfléchi ?</h4>
+        }
+        else{
+          <h4 class="modal-title" id="titrePopUp">Courage !</h4>
+        }
+        ?>
+
+        <!-- Bouton de fermuture de la popup -->
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+      </div>
+
+      <div class="modal-body">
+        <p class="lead">Score : <?=$_SESSION['bonne_rep']?>/<?=$_SESSION['nb_questions']?> </p>
+        <p>Vous gagnez <?=$_SESSION['points-creation-quiz']?> points</p>
+      </div>
+      <div class="modal-footer">
+        <a href="index.php" class="btn btn-primary pull-left">Accueil</a>
+      </div>
+
+    </div>
+  </div>
+</div>
