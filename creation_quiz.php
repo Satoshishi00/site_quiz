@@ -4,7 +4,6 @@
 
 <?php
 
-session_start();
 
 if( empty($_SESSION['error_nom']) AND empty($_SESSION['error_categorie']) ) {
   //initialisation des erreurs

@@ -44,12 +44,18 @@ if(!empty($_POST)){
       $_SESSION['pseudo']       = $data[2];
       $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
       $_SESSION['last_co']      = time();
-      //pour stoquer l'information de la connexion
-      $_SESSION['new_connexion'] = '1';
-
 
       $req = $bdd->prepare('UPDATE utilisateurs SET date_derniere_connexion=NOW() WHERE mail= :mail');
       $req->execute(array('mail' => $mail));
+
+      //pour stoquer l'information de la connexion
+      $_SESSION['new_connexion'] = '1';
+
+      //L'utilisateur gagne 5 points lorsqu'il se connecte
+      $_SESSION['points'] += 5;
+      $req = $bdd->prepare('UPDATE utilisateurs SET points= :points WHERE pseudo= :pseudo');
+      $req->execute(array('pseudo' => $_SESSION['pseudo'],
+                          'points' => $_SESSION['points']));
 
 
       header('Location: ../index.php');

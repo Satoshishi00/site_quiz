@@ -40,19 +40,24 @@ if(!empty($_POST)){
                           ));
   }
 
-  //nombre de points gagné en créant le quiz
+  //nombre de points gagnés en créant le quiz
   $_SESSION['points-creation-quiz'] = 10 + $_SESSION['nb_questions']*2;
-  //insertion des points gagnés dans le compte de l'utilisateur
-  $req = $bdd->prepare("UPDATE utilisateurs
-                        SET (points = :points)
-                        WHERE pseudo = :pseudo");
 
-  $req->execute(array(
-                      ':pseudo' => $_SESSION['pseudo'],
-                      ':points' => $_SESSION['points-creation-quiz'],
-                      ));
+  //ajout des points au nombre total de points
+  $_SESSION['points'] += $_SESSION['points-creation-quiz'];
+  //ajout d'un quiz au nombre de quiz créés
+  $_SESSION['nb_quiz'] += 1;
 
+  $req = $bdd->prepare('UPDATE utilisateurs SET points= :points nb_quiz= :nb_quiz WHERE pseudo= :pseudo');
+  $req->execute(array('pseudo' =>   $_SESSION['pseudo'],
+                      'points' =>   $_SESSION['points'],
+                      'nb_quiz' =>  $_SESSION['nb_quiz']));
+
+
+  //information necessaire au lancement de la modal
   $_SESSION['new_quiz'] = '1';
+
+  
 
   header('Location: ../index.php');
   exit();

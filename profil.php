@@ -1,6 +1,5 @@
 <?php
   include 'html/header.php';
-  session_start();
 ?>
 
 <header class="header-creation-quiz">

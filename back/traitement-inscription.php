@@ -68,6 +68,11 @@ if(!empty($_POST)){
               $_SESSION['user_ip']      = $_SERVER['REMOTE_ADDR'];
 							$_SESSION['new_inscription']	= "1";
 
+							$_SESSION['points'] += 10;
+							$req = $bdd->prepare('UPDATE utilisateurs SET points= :points nb_quiz= :nb_quiz WHERE pseudo= :pseudo');
+						  $req->execute(array('pseudo' =>   $_SESSION['pseudo'],
+						                      'points' =>   $_SESSION['points']));
+
               header('Location: ../index.php');
               exit();
 

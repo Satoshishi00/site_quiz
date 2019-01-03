@@ -12,7 +12,6 @@
 
     <?php
 
-    session_start();
     for( $i=1; $i <= $_SESSION['nb_questions'] ; $i++ ){
 
       echo

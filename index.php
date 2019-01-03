@@ -1,7 +1,7 @@
 <?php
   include 'html/header.php';
 
-  session_start();
+  // session_start();
 
   //si l'utilisateur vien de s'inscrire
   if( !empty($_SESSION['new_inscription']) ) {
