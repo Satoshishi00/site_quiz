@@ -20,6 +20,16 @@
 
   $_SESSION['nom_quiz'] = $_GET["nom_quiz"];
 
+
+  $_SESSION['resultat']=array();
+  //initialisation des résultats des questions
+  for($i=0;$i<$_SESSION['nb_questions'];$i++){
+    $_SESSION['resultat'][$i] = "";
+  }
+
+  //initialisation de la réponse au Quiz
+  $_SESSION['rep_quiz'] = 0;
+
   print_r($_SESSION['nom_quiz']);
   print_r($_SESSION['nb_questions']);
   print_r($_SESSION['array-question']);

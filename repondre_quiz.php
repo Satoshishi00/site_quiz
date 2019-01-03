@@ -1,52 +1,27 @@
 <?php
   include 'html/header.php';
 
-
-  //si l'utilisateur vien de répondre au quiz
+  //si l'utilisateur vient de répondre au quiz
   if( !empty($_SESSION['rep_quiz']) ) {
     include "modal.php";
     ?>
     <!-- Affichage d'une modal  -->
     <script>
       $(document).ready(function(){
-        $('#id-popup-inscription').modal('show'); //affichage de la pop-up au chargement de la page
+        $('#id-popup-reponse-quiz').modal('show'); //affichage de la pop-up au chargement de la page
       });
-    </script>";
+    </script>
     <?php
     $_SESSION['new_inscription'] = '';
   }
-  print_r($_SESSION['nom_quiz']);
-  print_r($_SESSION['nb_questions']);
-  print_r($_SESSION['array-question']);
 
-  $bdd = new PDO('mysql:host=localhost;dbname=site_quiz;charset=utf8', 'root', '');
+  //affichage données de la page
+  // print_r($_SESSION['nom_quiz']);
+  // print_r($_SESSION['nb_questions']);
+  // print_r($_SESSION['array-question']);
+  // print_r($_SESSION['resultat']);
 
-  $resultat = array();
 
-  //initialisation des résultats
-  for($i=0;$i<$_SESSION['nb_questions'];$i++){
-    $resultat[$i] = "";
-  }
-
-  //initialisation du nb de bonnes réponses
-  $_SESSION['bonne_rep'] = 0;
-  print_r($_SESSION['nb_questions']);
-  print_r($_SESSION['array-question']);
-  //$_SESSION['ration-bonne-rep'] = $_SESSION['bonne_rep']/$_SESSION['nb_questions'];
-
-  //analyse des réponses
-  if(!empty($_POST)){
-    for($i=0;$i<$_SESSION['nb_questions'];$i++){
-      if ($_SESSION['array-question']["$i"]['bonne_rep'] == $_POST["question_$i"]){
-        $resultat[$i] = "<div id=good_rep> Vous avez juste à la question n°" . ($i+1) . "</div>";
-        $_SESSION['bonne_rep'] += 1;
-      }
-      else{
-        $resultat[$i] = "<div id=bad_rep> Vous avez faux à la question n°" . ($i+1) . "</div>";
-      }
-    }
-
-  }
 
 ?>
 
@@ -56,7 +31,7 @@
 
 <section class="section-rep-quiz">
 
-  <form class="form-rep-quiz" action="" method="post">
+  <form class="form-rep-quiz" action="back/traitement-rep-quiz.php" method="post">
 
     <?php
 
@@ -95,7 +70,7 @@
 
         </div>";
 
-        echo $resultat[$i];
+        echo $_SESSION['resultat'][$i];
       }
 
     ?>

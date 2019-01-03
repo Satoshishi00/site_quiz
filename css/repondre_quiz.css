@@ -38,3 +38,9 @@
 .bad_rep {
   color: red;
 }
+
+.form-rep-quiz .btn {
+  float: right;
+  margin-right:  100px;
+  padding: 10px;
+}
