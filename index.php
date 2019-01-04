@@ -1,103 +1,58 @@
 <?php
-  include 'html/header.php';
+  include 'html/header_connexion.html';
 
-  // session_start();
+  session_start();
 
-  //si l'utilisateur vien de s'inscrire
-  if( !empty($_SESSION['new_inscription']) ) {
-    include "modal.php";
-    ?>
-    <!-- Affichage d'une modal  -->
-    <script>
-      $(document).ready(function(){
-        $('#id-popup-inscription').modal('show'); //affichage de la pop-up au chargement de la page
-      });
-    </script>";
-    <?php
-    $_SESSION['new_inscription'] = '';
+  if( empty($_SESSION['error_mail']) AND empty($_SESSION['error_mdp']) ) {
+    //initialisation des erreurs
+    $_SESSION['error_mail'] = '';
+    $_SESSION['error_mdp'] = '';
   }
-
-  //si l'utilisateur vient de se connecter
-  if( !empty($_SESSION['new_connexion']) ) {
-    include "modal.php";
-    ?>
-    <!-- Affichage d'une modal  -->
-    <script>
-      $(document).ready(function(){
-        $('#id-popup-connexion').modal('show'); //affichage de la pop-up au chargement de la page
-      });
-    </script>";
-    <?php $_SESSION['new_connexion'] = '';
-  }
-
-  //si l'utilisateur vient de créer un quiz
-  if( !empty($_SESSION['new_quiz']) ) {
-    include "modal.php";
-    ?>
-    <!-- Affichage d'une modal  -->
-    <script>
-      $(document).ready(function(){
-        $('#id-popup-creation-quiz').modal('show'); //affichage de la pop-up au chargement de la page
-      });
-    </script>";
-    <?php $_SESSION['new_quiz'] = '';
-  }
-
 
 ?>
 
-<header class="header-accueil">
-  <h1>Accueil</h1>
+
+<header class="header-connexion">
+  <h1>Connexion</h1>
 </header>
 
-<section class="espace_cartes">
+<section>
 
-  <?php
+  <form class="form-inscription" method="post" action="back/traitement-connexion.php">
 
-  //compter le nombre de quiz
-  $bdd = new PDO('mysql:host=localhost;dbname=site_quiz;charset=utf8', 'root', '');
-  $req = $bdd->prepare("SELECT COUNT(id) FROM quiz ");
-  $req->execute();
-  $data = $req->fetch(0);
-  $nb_quiz = $data[0];
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Entrez votre email" required>
+      <small class="small-error"><?=$_SESSION['error_mail']?></small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Mot de passe</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Entrez votre mot de passe" required>
+      <small class="small-error"><?=$_SESSION['error_mdp']?></small>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
+    </div>
 
-  for($i=$nb_quiz;$i>0;$i--){
-    $req = $bdd->prepare("SELECT * FROM quiz WHERE id = :id");
-    $req->execute(array('id' => $i));
-    $data = $req->fetch(0);
-    echo
-      "<div class=carte_quiz>
-        <div class='card text-center'>
-          <div class=card-header>
-            $data[categorie]
-          </div>
-          <div class=card-body>
-            <h5 class=card-title>$data[nom]</h5>
-            <p class=card-text>$data[description]</p>
-            <p class=card-text>$data[nb_questions] questions</p>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
 
-            <a href='back/before-rep-question.php/?nom_quiz=$data[nom]' class='btn btn-primary'>Lancer le quiz</a>
-          </div>
-          <div class='card-footer text-muted'>
-            $data[date_creation]
+    <div class="inscription">
+      <p>Vous n'avez pas encore de compte ? :o</p>
+      <a href="inscription.php" class="btn btn-primary">S'inscrire</a>
+    </div>
 
-          </div>
-        </div>
-      </div>";
-  }
-
-  // $req = $bdd->prepare("SELECT * FROM quiz WHERE id = :id");
-  // $req->execute('id' = $i);
-  // $data = $req->fetch(0);
-  // print_r($data);
-
-  ?>
+    <a class="mdp_oublie" href="mdp_oublie.php">Mot de passe oublié ?</a>
+  </form>
 
 
 
 </section>
 
-
 <?php
-  include 'html/footer.html';
+  include 'html/footer_connexion.html';
+
+  //reinitialisation des variables erreur
+  $_SESSION['error_mail'] = '';
+  $_SESSION['error_mdp'] = '';
 ?>

@@ -58,7 +58,7 @@ if(!empty($_POST)){
                           'points' => $_SESSION['points']));
 
 
-      header('Location: ../index.php');
+      header('Location: ../accueil.php');
       exit();
 
     }

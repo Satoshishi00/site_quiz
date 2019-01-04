@@ -17,7 +17,7 @@
         <p>Vous gagnez 10 points pour votre inscription</p>
       </div>
       <div class="modal-footer">
-        <a href="index.php" class="btn btn-primary pull-left">Recevoir</a>
+        <a href="accueil.php" class="btn btn-primary pull-left">Recevoir</a>
       </div>
 
     </div>
@@ -42,7 +42,7 @@
         <p>Vous gagnez 5 points pour vous être connecté</p>
       </div>
       <div class="modal-footer">
-        <a href="index.php" class="btn btn-primary pull-left">Recevoir</a>
+        <a href="accueil.php" class="btn btn-primary pull-left">Recevoir</a>
       </div>
 
     </div>
@@ -67,7 +67,7 @@
         <p>Vous gagnez <?=$_SESSION['points-creation-quiz']?> points</p>
       </div>
       <div class="modal-footer">
-        <a href="index.php" class="btn btn-primary pull-left">Recevoir</a>
+        <a href="accueil.php" class="btn btn-primary pull-left">Recevoir</a>
       </div>
 
     </div>
@@ -120,7 +120,7 @@
         <p>Vous gagnez <?=$_SESSION['points-reponse-quiz']?> points</p>
       </div>
       <div class="modal-footer">
-        <a href="index.php" class="btn btn-primary pull-left">Accueil</a>
+        <a href="accueil.php" class="btn btn-primary pull-left">Accueil</a>
       </div>
 
     </div>

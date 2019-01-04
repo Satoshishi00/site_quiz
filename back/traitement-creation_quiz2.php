@@ -57,9 +57,9 @@ if(!empty($_POST)){
   //information necessaire au lancement de la modal
   $_SESSION['new_quiz'] = '1';
 
-  
 
-  header('Location: ../index.php');
+
+  header('Location: ../accueil.php');
   exit();
 }
 

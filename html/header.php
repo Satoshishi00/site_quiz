@@ -15,7 +15,7 @@
     <header>
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" href="/site_quiz/index.php">Accueil</a>
+          <a class="nav-link active" href="/site_quiz/accueil.php">Accueil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/site_quiz/creation_quiz.php">Créer un quiz</a>
@@ -35,7 +35,7 @@
 
 
         <!-- <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link disabled" href="#" tabaccueil="-1" aria-disabled="true">Disabled</a>
         </li> -->
       </ul>
     </header>

@@ -73,7 +73,7 @@ if(!empty($_POST)){
 						  $req->execute(array('pseudo' =>   $_SESSION['pseudo'],
 						                      'points' =>   $_SESSION['points']));
 
-              header('Location: ../index.php');
+              header('Location: ../accueil.php');
               exit();
 
             }
